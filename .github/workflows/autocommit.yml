@@ -1,12 +1,8 @@
 name: Auto commit
 
 on:
-  push:
-    branches:
-      - master
-
   schedule:
-    - cron: "0 5 * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
+    - cron: "20 5 * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
 
 jobs:
   auto_commit:
@@ -22,8 +18,9 @@ jobs:
       - name: Commit changes
         run: |
           rand=$(($RANDOM % 5))
-          echo $rand
-          for ((i=1; i<=$rand; i++)); do
+          iteration=$(($i+1))
+          echo $iteration
+          for ((i=1; i<=$iteration; i++)); do
               sleep 5 &
               d=`date '+%Y-%m-%dT%H:%M:%SZ'`
               wait 

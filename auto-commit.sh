@@ -1,9 +1,7 @@
-
 rand=$(($RANDOM % 5))
-
-echo $rand
-
-for ((i=1; i<=$rand; i++)); do
+iteration=$(($i+1))
+echo $iteration
+for ((i=1; i<=$iteration; i++)); do
     sleep 5 &
     d=`date '+%Y-%m-%dT%H:%M:%SZ'`
     wait 
@@ -13,10 +11,10 @@ for ((i=1; i<=$rand; i++)); do
     wait 
     git config --local user.name "ridhlab"
     wait 
-    git add -A #&& git commit -m "bot: auto commit $i"
+    git add -A 
     wait 
     echo "Iteration $i"
     wait 
-    git commit -m "bot: auto commit $i"
+    git commit -m "bot: auto commit at $d"
     wait
 done
