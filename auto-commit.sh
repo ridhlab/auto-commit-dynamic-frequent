@@ -1,7 +1,7 @@
 
-rand=$(($RANDOM % 5))
+# rand=$(($RANDOM % 5))
 
-for ((i=1; i<=$rand; i++)); do
+for ((i=1; i<=1; i++)); do
     wait 
     d=`date '+%Y-%m-%dT%H:%M:%SZ'`
     wait 
@@ -17,3 +17,10 @@ for ((i=1; i<=$rand; i++)); do
     wait 
     git commit -m "bot: auto commit $i"
 done
+
+# sleep 10 &
+# sleep 15 &
+# sleep 5 &
+# echo $(date +%T)
+# wait 
+# echo $(date +%T)
