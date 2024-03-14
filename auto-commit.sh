@@ -20,10 +20,3 @@ for ((i=1; i<=$rand; i++)); do
     git commit -m "bot: auto commit $i"
     wait
 done
-
-# sleep 10 &
-# sleep 15 &
-# sleep 5 &
-# echo $(date +%T)
-# wait 
-# echo $(date +%T)
