@@ -1,5 +1,7 @@
 
-# rand=$(($RANDOM % 5))
+rand=$(($RANDOM % 5))
+
+echo $rand
 
 for ((i=1; i<=$rand; i++)); do
     wait 
