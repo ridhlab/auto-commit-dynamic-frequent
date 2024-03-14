@@ -4,7 +4,7 @@ rand=$(($RANDOM % 5))
 echo $rand
 
 for ((i=1; i<=$rand; i++)); do
-    wait 
+    sleep 5 &
     d=`date '+%Y-%m-%dT%H:%M:%SZ'`
     wait 
     echo $d > LAST_UPDATED
