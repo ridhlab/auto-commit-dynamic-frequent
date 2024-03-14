@@ -6,7 +6,7 @@ on:
       - master
 
   schedule:
-    - cron: "30,45,50 4 * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
+    - cron: "0 5 * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
 
 jobs:
   auto_commit:
@@ -43,5 +43,6 @@ jobs:
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.6.0
         with:
+          force: true
           directory: "."
           github_token: ${{ secrets.GITHUB_TOKEN }}
