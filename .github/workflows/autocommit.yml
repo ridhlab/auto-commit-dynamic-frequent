@@ -2,7 +2,7 @@ name: Auto commit
 
 on:
   schedule:
-    - cron: "20 5 * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
+    - cron: "30 5 * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
 
 jobs:
   auto_commit:
@@ -38,7 +38,7 @@ jobs:
               wait
           done
       - name: GitHub Push
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@master
         with:
           force: true
           directory: "."
