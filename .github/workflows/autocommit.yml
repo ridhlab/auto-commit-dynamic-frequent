@@ -6,7 +6,7 @@ on:
       - master
 
   schedule:
-    - cron: "0 3,12 * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
+    - cron: "0 2 * * *" # See https://crontab.guru/#0_7,9,11_*_*_1,3
 
 jobs:
   auto_commit:
@@ -21,7 +21,7 @@ jobs:
 
       - name: Commit changes
         run: |
-          rand=$(($RANDOM % 5))
+          rand=$(($RANDOM % 2))
           amountCommit=$(($rand+1))
           echo $amountCommit
           for ((i=1; i<=$amountCommit; i++)); do
